@@ -19,7 +19,7 @@ for x in range(5):
 
 def print_board(board):
 	for row in board:
-		print " ".join(row)
+		print bcolors.BOLD + " ".join(row) + bcolors.ENDC
 
 print "Let's play Battleship!"
 
@@ -61,9 +61,9 @@ while (end_flag == 0):
             else:
                 print ("You missed my battleship!")
                 if ((turn + 1) % 2 == 1):
-                   board[guess_row][guess_col] = bcolors.OKBLUE + "X" + bcolors.ENDC
+                   board[guess_row][guess_col] = bcolors.OKBLUE + bcolors.BOLD + "X" + bcolors.ENDC + bcolors.BOLD
                 else:
-                   board[guess_row][guess_col] = bcolors.OKGREEN + "X" + bcolors.ENDC
+                   board[guess_row][guess_col] = bcolors.OKGREEN + bcolors.BOLD + "X" + bcolors.ENDC + bcolors.BOLD
                 print_board(board)
             if (turn == 7):
                 print bcolors.FAIL + ("Game Over") + bcolors.ENDC
